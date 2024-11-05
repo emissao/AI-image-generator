@@ -1,10 +1,29 @@
+import styled, { ThemeProvider } from "styled-components";
+import { darkTheme } from "./utils/themes";
 
+const Container = styled.div 
+`
+width: 100%;
+height: 100%;
+display: flex;
+background: ${({theme}) => theme.bg};`;
+
+const Wrapper = styled.div`
+height: 100%;
+ position: relative;
+ display: flex;
+ flex-firection: column;
+ justify-content: space-between
+ flex: 3;
+`
 
 function App() {
-  return (
-    <div className="App"> hello
-    </div>
-  );
+  return <ThemeProvider> theme={darkTheme}
+  <Container> 
+    <Wrapper>Hello</Wrapper>
+  </Container>
+  </ThemeProvider> 
+  ;
 }
 
 export default App;
